@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: mcp-adapter
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: N8N_WEBHOOK_URL
+        value: https://brg-ai.app.n8n.cloud/webhook/super-ai-agent
+      - key: PORT
+        value: 3000
+    healthCheckPath: /health 
